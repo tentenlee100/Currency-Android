@@ -35,18 +35,18 @@ public class MainActivity extends AppCompatActivity {
                     ntdFloat = Float.parseFloat(enterText);
                 }catch (NumberFormatException e) {
                     new AlertDialog.Builder(MainActivity.this)
-                            .setTitle("Problem")
-                            .setMessage("Please enter your NTD amount")
-                            .setPositiveButton("OK", null)
+                            .setTitle(R.string.problem)
+                            .setMessage(R.string.enter_ntd)
+                            .setPositiveButton(R.string.ok, null)
                             .show();
                     return;
                 }
                 float usdFloat = ntdFloat * 30.9f;
                 usResultTextView.setText(String.valueOf(usdFloat));
                 new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("Result")
-                        .setMessage("USD is " + usdFloat)
-                        .setPositiveButton("OK", null)
+                        .setTitle(R.string.result)
+                        .setMessage(getString(R.string.usd_is) + usdFloat)
+                        .setPositiveButton(R.string.ok, null)
                         .show();
 
             }
